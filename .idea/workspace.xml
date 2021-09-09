@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25b615ea-6971-4706-baff-2810c42b2789" name="assignment" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/KalahaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/controller/PlayerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-data/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/domain/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/repository/PlayerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/service/PlayerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-data/src/test/java/com/bol/assessment/service/PlayerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <list id="5eb1f725-e542-47f4-9175-efc16df47cfb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1xr8ERud5yRM5blm0ECcpEDMQrc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.bol.assessment.service" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bol.assignment.kalaha" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/kalaha-api/src/main/java" />
+      <recent name="$PROJECT_DIR$/kalaha-api/src/main/resources" />
+      <recent name="$PROJECT_DIR$/kalaha-api" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.com.bol.assessment in kalaha-data">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerServiceTest.createOrUpdatePlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-data" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bol.assessment.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bol.assessment.service" />
+      <option name="MAIN_CLASS_NAME" value="com.bol.assessment.service.PlayerServiceTest" />
+      <option name="METHOD_NAME" value="createOrUpdatePlayer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerServiceTest.deletePlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-data" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bol.assessment.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bol.assessment.service" />
+      <option name="MAIN_CLASS_NAME" value="com.bol.assessment.service.PlayerServiceTest" />
+      <option name="METHOD_NAME" value="deletePlayer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerServiceTest.getPlayerById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-data" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bol.assessment.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bol.assessment.service" />
+      <option name="MAIN_CLASS_NAME" value="com.bol.assessment.service.PlayerServiceTest" />
+      <option name="METHOD_NAME" value="getPlayerById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.bol.assessment in kalaha-data" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-data" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bol.assessment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bol.assessment" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KalahaApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kalaha-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="src.com.bol.assignment.KalahaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KalahaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kalaha-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bol.assignment.KalahaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.bol.assessment in kalaha-data" />
+        <item itemvalue="JUnit.PlayerServiceTest.deletePlayer" />
+        <item itemvalue="JUnit.PlayerServiceTest.getPlayerById" />
+        <item itemvalue="JUnit.PlayerServiceTest.createOrUpdatePlayer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="Default" summary="Default task">
+      <branch name="main" repository="$PROJECT_DIR$" />
+      <changelist id="5eb1f725-e542-47f4-9175-efc16df47cfb" name="Default Changelist" comment="" />
+      <created>1631101734413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631101897117</updated>
+      <workItem from="1631101735580" duration="162000" />
+    </task>
+    <task active="true" id="LOCAL-00001" summary="assignment">
+      <branch name="main" repository="$PROJECT_DIR$" original="true" />
+      <branch name="assignment" repository="$PROJECT_DIR$" />
+      <changelist id="25b615ea-6971-4706-baff-2810c42b2789" name="assignment" comment="" />
+      <created>1631101885124</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631101897117</updated>
+      <workItem from="1631101897836" duration="76000" />
+      <workItem from="1631101984608" duration="6617000" />
+      <workItem from="1631136623919" duration="525000" />
+      <workItem from="1631158725223" duration="2224000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="172" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1631102994644">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="172" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1631102994644" />
+    <state x="521" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1631159472105">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="521" y="134" key="#com.intellij.ide.util.MemberChooser/0.23.1440.813@0.23.1440.813" timestamp="1631159472105" />
+    <state x="446" y="204" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1631108506857">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="446" y="204" key="#com.intellij.ide.util.PackageChooserDialog/0.23.1440.813@0.23.1440.813" timestamp="1631108506857" />
+    <state x="140" y="351" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1631109149391">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="140" y="351" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1440.813@0.23.1440.813" timestamp="1631109149391" />
+    <state x="445" y="291" width="673" height="260" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1631108508637">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="445" y="291" width="673" height="260" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1440.813@0.23.1440.813" timestamp="1631108508637" />
+    <state x="445" y="308" width="673" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1631108490427">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="445" y="308" width="673" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.1440.813@0.23.1440.813" timestamp="1631108490427" />
+    <state width="1358" height="204" key="GridCell.Tab.0.bottom" timestamp="1631162615550">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="204" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1631162615550" />
+    <state width="1358" height="204" key="GridCell.Tab.0.center" timestamp="1631162615547">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="204" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1631162615547" />
+    <state width="1358" height="204" key="GridCell.Tab.0.left" timestamp="1631162615545">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="204" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1631162615545" />
+    <state width="1358" height="204" key="GridCell.Tab.0.right" timestamp="1631162615548">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="204" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1631162615548" />
+    <state width="1358" height="204" key="GridCell.Tab.1.bottom" timestamp="1631108922786">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="204" key="GridCell.Tab.1.bottom/0.23.1440.813@0.23.1440.813" timestamp="1631108922786" />
+    <state width="1358" height="204" key="GridCell.Tab.1.center" timestamp="1631108922785">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="204" key="GridCell.Tab.1.center/0.23.1440.813@0.23.1440.813" timestamp="1631108922785" />
+    <state width="1358" height="204" key="GridCell.Tab.1.left" timestamp="1631108922785">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="204" key="GridCell.Tab.1.left/0.23.1440.813@0.23.1440.813" timestamp="1631108922785" />
+    <state width="1358" height="204" key="GridCell.Tab.1.right" timestamp="1631108922786">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="204" key="GridCell.Tab.1.right/0.23.1440.813@0.23.1440.813" timestamp="1631108922786" />
+    <state x="196" y="23" key="SettingsEditor" timestamp="1631162916291">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="196" y="23" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1631162916291" />
+    <state x="440" y="259" key="SimpleOpenTaskDialog" timestamp="1631101897142">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="440" y="259" key="SimpleOpenTaskDialog/0.23.1440.813@0.23.1440.813" timestamp="1631101897142" />
+    <state x="433" y="223" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631161909575">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="433" y="223" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.813@0.23.1440.813" timestamp="1631161909575" />
+    <state x="0" y="84" key="new project wizard" timestamp="1631108329132">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="0" y="84" key="new project wizard/0.23.1440.813@0.23.1440.813" timestamp="1631108329132" />
+  </component>
+</project>
