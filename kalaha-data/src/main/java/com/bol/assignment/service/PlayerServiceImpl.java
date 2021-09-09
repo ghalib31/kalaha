@@ -1,21 +1,19 @@
-package com.bol.assessment.service;
+package com.bol.assignment.service;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.bol.assessment.domain.Player;
-import com.bol.assessment.repository.PlayerRepository;
+import com.bol.assignment.domain.Player;
+import com.bol.assignment.repository.PlayerRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * Service to interact with player repository.
- */
 @Service
 @AllArgsConstructor
 @Slf4j
-public class PlayerService {
+public class PlayerServiceImpl implements PlayerService{
+
   private final PlayerRepository playerRepository;
 
   /**
@@ -34,7 +32,7 @@ public class PlayerService {
    * @param id the id
    * @return the player by id
    */
-  public Optional<Player> getPlayerById(final String id) {
+  public Optional<Player> getPlayerById(final Long id) {
     return playerRepository.findById(id);
   }
 
@@ -43,7 +41,7 @@ public class PlayerService {
    *
    * @param id the id
    */
-  public void deletePlayer(final String id) {
+  public void deletePlayer(final Long id) {
     final Optional<Player> player = playerRepository.findById(id);
     if (player.isPresent()) {
       playerRepository.delete(player.get());

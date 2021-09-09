@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25b615ea-6971-4706-baff-2810c42b2789" name="assignment" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/KalahaApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/controller/PlayerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-data/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/domain/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/repository/PlayerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/service/PlayerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kalaha-data/src/test/java/com/bol/assessment/service/PlayerServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="25b615ea-6971-4706-baff-2810c42b2789" name="assignment" comment="Setting up.">
+      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/command/PlayerCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/constant/KalahaConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/converter/PlayerCommandToPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/converter/PlayerToPlayerCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-api/src/test/java/com/bol/assignment/controller/PlayerControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assignment/service/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/KalahaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/KalahaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/controller/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-api/src/main/java/com/bol/assignment/controller/PlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-data/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-data/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assignment/domain/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/repository/PlayerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assignment/repository/PlayerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assessment/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-data/src/main/java/com/bol/assignment/service/PlayerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kalaha-data/src/test/java/com/bol/assessment/service/PlayerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/kalaha-data/src/test/java/com/bol/assignment/service/PlayerServiceImplTest.java" afterDir="false" />
     </list>
     <list id="5eb1f725-e542-47f4-9175-efc16df47cfb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,16 +53,21 @@
     </option>
   </component>
   <component name="ProjectId" id="1xr8ERud5yRM5blm0ECcpEDMQrc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mongo&#10;postgresql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -73,102 +80,111 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.bol.assignment.controller" />
       <recent name="com.bol.assessment.service" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.bol.assignment.kalaha" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/kalaha-api/src/main/java" />
       <recent name="$PROJECT_DIR$/kalaha-api/src/main/resources" />
       <recent name="$PROJECT_DIR$/kalaha-api" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bol.assignment.kalaha" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.bol.assessment in kalaha-data">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlayerControllerTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerServiceTest.createOrUpdatePlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kalaha-data" />
+    <configuration name="PlayerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.bol.assessment.service.*" />
+          <option name="PATTERN" value="com.bol.assignment.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.bol.assessment.service" />
-      <option name="MAIN_CLASS_NAME" value="com.bol.assessment.service.PlayerServiceTest" />
-      <option name="METHOD_NAME" value="createOrUpdatePlayer" />
+      <option name="PACKAGE_NAME" value="com.bol.assignment.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.bol.assignment.controller.PlayerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerControllerTest.createPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bol.assignment.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bol.assignment.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.bol.assignment.controller.PlayerControllerTest" />
+      <option name="METHOD_NAME" value="createPlayer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerServiceTest.deletePlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kalaha-data" />
+    <configuration name="PlayerControllerTest.deletePlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.bol.assessment.service.*" />
+          <option name="PATTERN" value="com.bol.assignment.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.bol.assessment.service" />
-      <option name="MAIN_CLASS_NAME" value="com.bol.assessment.service.PlayerServiceTest" />
+      <option name="PACKAGE_NAME" value="com.bol.assignment.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.bol.assignment.controller.PlayerControllerTest" />
       <option name="METHOD_NAME" value="deletePlayer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerServiceTest.getPlayerById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kalaha-data" />
+    <configuration name="PlayerControllerTest.getPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.bol.assessment.service.*" />
+          <option name="PATTERN" value="com.bol.assignment.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.bol.assessment.service" />
-      <option name="MAIN_CLASS_NAME" value="com.bol.assessment.service.PlayerServiceTest" />
-      <option name="METHOD_NAME" value="getPlayerById" />
+      <option name="PACKAGE_NAME" value="com.bol.assignment.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.bol.assignment.controller.PlayerControllerTest" />
+      <option name="METHOD_NAME" value="getPlayer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.bol.assessment in kalaha-data" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kalaha-data" />
+    <configuration name="PlayerControllerTest.updatePlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kalaha-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.bol.assessment.*" />
+          <option name="PATTERN" value="com.bol.assignment.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.bol.assessment" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KalahaApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="kalaha-api" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="src.com.bol.assignment.KalahaApplication" />
+      <option name="PACKAGE_NAME" value="com.bol.assignment.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.bol.assignment.controller.PlayerControllerTest" />
+      <option name="METHOD_NAME" value="updatePlayer" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,12 +196,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.KalahaApplication" />
+      <item itemvalue="JUnit.PlayerControllerTest.createPlayer" />
+      <item itemvalue="JUnit.PlayerControllerTest.getPlayer" />
+      <item itemvalue="JUnit.PlayerControllerTest" />
+      <item itemvalue="JUnit.PlayerControllerTest.updatePlayer" />
+      <item itemvalue="JUnit.PlayerControllerTest.deletePlayer" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.com.bol.assessment in kalaha-data" />
-        <item itemvalue="JUnit.PlayerServiceTest.deletePlayer" />
-        <item itemvalue="JUnit.PlayerServiceTest.getPlayerById" />
-        <item itemvalue="JUnit.PlayerServiceTest.createOrUpdatePlayer" />
+        <item itemvalue="JUnit.PlayerControllerTest" />
+        <item itemvalue="JUnit.PlayerControllerTest.updatePlayer" />
+        <item itemvalue="JUnit.PlayerControllerTest.deletePlayer" />
+        <item itemvalue="JUnit.PlayerControllerTest.createPlayer" />
+        <item itemvalue="JUnit.PlayerControllerTest.getPlayer" />
       </list>
     </recent_temporary>
   </component>
@@ -212,23 +237,35 @@
       <workItem from="1631101897836" duration="76000" />
       <workItem from="1631101984608" duration="6617000" />
       <workItem from="1631136623919" duration="525000" />
-      <workItem from="1631158725223" duration="2224000" />
+      <workItem from="1631158725223" duration="12285000" />
+      <workItem from="1631188198888" duration="15153000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Setting up.">
+      <created>1631163057704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631163057704</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setting up." />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up." />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="172" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1631102994644">
+    <state x="180" y="80" width="1110" height="701" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1631197932880">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="172" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1631102994644" />
-    <state x="521" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1631159472105">
+    <state x="180" y="80" width="1110" height="701" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1631197932880" />
+    <state x="521" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1631172892141">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="521" y="134" key="#com.intellij.ide.util.MemberChooser/0.23.1440.813@0.23.1440.813" timestamp="1631159472105" />
+    <state x="521" y="134" key="#com.intellij.ide.util.MemberChooser/0.23.1440.813@0.23.1440.813" timestamp="1631172892141" />
     <state x="446" y="204" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1631108506857">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
@@ -245,38 +282,46 @@
       <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="445" y="308" width="673" height="226" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.1440.813@0.23.1440.813" timestamp="1631108490427" />
-    <state width="1358" height="204" key="GridCell.Tab.0.bottom" timestamp="1631162615550">
+    <state x="144" y="23" width="1128" height="813" key="CommitChangelistDialog2" timestamp="1631163057255">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1358" height="204" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1631162615550" />
-    <state width="1358" height="204" key="GridCell.Tab.0.center" timestamp="1631162615547">
+    <state x="144" y="23" width="1128" height="813" key="CommitChangelistDialog2/0.23.1440.813@0.23.1440.813" timestamp="1631163057255" />
+    <state width="1358" height="332" key="GridCell.Tab.0.bottom" timestamp="1631216837225">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1358" height="204" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1631162615547" />
-    <state width="1358" height="204" key="GridCell.Tab.0.left" timestamp="1631162615545">
+    <state width="1358" height="332" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1631216837225" />
+    <state width="1358" height="332" key="GridCell.Tab.0.center" timestamp="1631216837224">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1358" height="204" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1631162615545" />
-    <state width="1358" height="204" key="GridCell.Tab.0.right" timestamp="1631162615548">
+    <state width="1358" height="332" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1631216837224" />
+    <state width="1358" height="332" key="GridCell.Tab.0.left" timestamp="1631216837224">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1358" height="204" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1631162615548" />
-    <state width="1358" height="204" key="GridCell.Tab.1.bottom" timestamp="1631108922786">
+    <state width="1358" height="332" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1631216837224" />
+    <state width="1358" height="332" key="GridCell.Tab.0.right" timestamp="1631216837225">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1358" height="204" key="GridCell.Tab.1.bottom/0.23.1440.813@0.23.1440.813" timestamp="1631108922786" />
-    <state width="1358" height="204" key="GridCell.Tab.1.center" timestamp="1631108922785">
+    <state width="1358" height="332" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1631216837225" />
+    <state width="1358" height="332" key="GridCell.Tab.1.bottom" timestamp="1631203230394">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1358" height="204" key="GridCell.Tab.1.center/0.23.1440.813@0.23.1440.813" timestamp="1631108922785" />
-    <state width="1358" height="204" key="GridCell.Tab.1.left" timestamp="1631108922785">
+    <state width="1358" height="332" key="GridCell.Tab.1.bottom/0.23.1440.813@0.23.1440.813" timestamp="1631203230394" />
+    <state width="1358" height="332" key="GridCell.Tab.1.center" timestamp="1631203230393">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1358" height="204" key="GridCell.Tab.1.left/0.23.1440.813@0.23.1440.813" timestamp="1631108922785" />
-    <state width="1358" height="204" key="GridCell.Tab.1.right" timestamp="1631108922786">
+    <state width="1358" height="332" key="GridCell.Tab.1.center/0.23.1440.813@0.23.1440.813" timestamp="1631203230393" />
+    <state width="1358" height="332" key="GridCell.Tab.1.left" timestamp="1631203230393">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1358" height="204" key="GridCell.Tab.1.right/0.23.1440.813@0.23.1440.813" timestamp="1631108922786" />
+    <state width="1358" height="332" key="GridCell.Tab.1.left/0.23.1440.813@0.23.1440.813" timestamp="1631203230393" />
+    <state width="1358" height="332" key="GridCell.Tab.1.right" timestamp="1631203230394">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1358" height="332" key="GridCell.Tab.1.right/0.23.1440.813@0.23.1440.813" timestamp="1631203230394" />
+    <state width="315" height="477" key="HiddenNamespacesPopup" timestamp="1631179549734">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="315" height="477" key="HiddenNamespacesPopup/0.23.1440.813@0.23.1440.813" timestamp="1631179549734" />
     <state x="196" y="23" key="SettingsEditor" timestamp="1631162916291">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
@@ -285,13 +330,37 @@
       <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="440" y="259" key="SimpleOpenTaskDialog/0.23.1440.813@0.23.1440.813" timestamp="1631101897142" />
-    <state x="433" y="223" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631161909575">
+    <state x="606" y="315" width="392" height="236" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1631199410078">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="433" y="223" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.813@0.23.1440.813" timestamp="1631161909575" />
+    <state x="606" y="315" width="392" height="236" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1440.813@0.23.1440.813" timestamp="1631199410078" />
+    <state x="108" y="123" width="1200" height="597" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1631196454428">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="108" y="123" width="1200" height="597" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.813@0.23.1440.813" timestamp="1631196454428" />
+    <state x="433" y="223" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631200356584">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="433" y="223" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1440.813@0.23.1440.813" timestamp="1631200356584" />
+    <state x="344" y="428" width="814" height="418" key="dock-window-1" timestamp="1631179186528">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="344" y="428" width="814" height="418" key="dock-window-1/0.23.1440.813@0.23.1440.813" timestamp="1631179186528" />
+    <state x="389" y="170" width="637" height="502" key="find.popup" timestamp="1631216704199">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="389" y="170" width="637" height="502" key="find.popup/0.23.1440.813@0.23.1440.813" timestamp="1631216704199" />
     <state x="0" y="84" key="new project wizard" timestamp="1631108329132">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="0" y="84" key="new project wizard/0.23.1440.813@0.23.1440.813" timestamp="1631108329132" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mohammad_ghalib_nashtar$PlayerControllerTest.ic" NAME="PlayerControllerTest Coverage Results" MODIFIED="1631216609690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bol.assignment.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/mohammad_ghalib_nashtar$com_bol_assessment_in_kalaha_data.ic" NAME="com.bol.assessment in kalaha-data Coverage Results" MODIFIED="1631162978915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bol.assessment.*</FILTER>
+    </SUITE>
   </component>
 </project>

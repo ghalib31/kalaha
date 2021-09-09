@@ -1,7 +1,7 @@
-package com.bol.assessment.service;
+package com.bol.assignment.service;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -13,21 +13,21 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.bol.assessment.domain.Player;
-import com.bol.assessment.repository.PlayerRepository;
+import com.bol.assignment.domain.Player;
+import com.bol.assignment.repository.PlayerRepository;
 
 /**
  * The type Player service test.
  */
-@ExtendWith(SpringExtension.class)
-class PlayerServiceTest {
+@ExtendWith(MockitoExtension.class)
+class PlayerServiceImplTest {
 
   @Mock
   private PlayerRepository playerRepository;
   @InjectMocks
-  private PlayerService playerService;
+  private PlayerServiceImpl playerService;
 
   @BeforeEach
   void setUp() {
@@ -41,19 +41,19 @@ class PlayerServiceTest {
 
   @Test
   void getPlayerById() {
-    when(playerRepository.findById(anyString())).thenReturn(Optional.of(mockPlayer()));
-    playerService.getPlayerById("1");
-    verify(playerRepository, times(1)).findById(anyString());
+    when(playerRepository.findById(anyLong())).thenReturn(Optional.of(mockPlayer()));
+    playerService.getPlayerById(1L);
+    verify(playerRepository, times(1)).findById(anyLong());
   }
 
   @Test
   void deletePlayer() {
-    when(playerRepository.findById(anyString())).thenReturn(Optional.of(mockPlayer()));
-    playerService.deletePlayer("1");
+    when(playerRepository.findById(anyLong())).thenReturn(Optional.of(mockPlayer()));
+    playerService.deletePlayer(1L);
     verify(playerRepository, times(1)).delete(any(Player.class));
   }
 
   private Player mockPlayer() {
-    return Player.builder().id("1").firstName("John").lastName("Doe").build();
+    return Player.builder().id(1L).firstName("John").lastName("Doe").build();
   }
 }

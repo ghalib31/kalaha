@@ -1,13 +1,13 @@
-package com.bol.assessment.repository;
+package com.bol.assignment.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bol.assessment.domain.Player;
+import com.bol.assignment.domain.Player;
 
 /**
  * The interface Player repository to persist data.
  */
 @Repository
-public interface PlayerRepository extends CrudRepository<Player, String> {
+public interface PlayerRepository extends CrudRepository<Player, Long> {
 }
