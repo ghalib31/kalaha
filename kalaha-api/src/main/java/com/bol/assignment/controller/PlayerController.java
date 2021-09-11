@@ -25,7 +25,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * The type Player controller.
+ * This class exposes endpoints to add/modify/delete players.
  */
 @RestController
 @Slf4j
@@ -34,6 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 public class PlayerController {
 
   private final PlayerService playerService;
+  private final PlayerCommandToPlayer playerCommandToPlayer;
 
   /**
    * Data binder.
@@ -53,7 +54,6 @@ public class PlayerController {
    */
   @PostMapping
   public ResponseEntity<Player> createPlayer(@RequestBody final PlayerCommand playerCommand) {
-    final PlayerCommandToPlayer playerCommandToPlayer = new PlayerCommandToPlayer();
     final Player player = playerService.createOrUpdatePlayer(playerCommandToPlayer.convert(playerCommand));
     log.info("Created player with id {}", player.getId());
     return ResponseEntity.ok(player);
@@ -83,7 +83,6 @@ public class PlayerController {
    */
   @PutMapping
   public ResponseEntity<Player> updatePlayer(@RequestBody final PlayerCommand playerCommand) {
-    final PlayerCommandToPlayer playerCommandToPlayer = new PlayerCommandToPlayer();
     final Optional<Player> optionalPlayer = playerService.getPlayerById(playerCommand.getId());
     if (optionalPlayer.isPresent()) {
       final Player player = playerService.createOrUpdatePlayer(playerCommandToPlayer.convert(playerCommand));

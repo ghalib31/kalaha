@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 import com.bol.assignment.domain.Player;
 import com.bol.assignment.command.PlayerCommand;
 
+/**
+ * Converter to convert Player to PlayerCommand.
+ */
 @Component
 public class PlayerToPlayerCommand implements Converter<Player, PlayerCommand> {
 

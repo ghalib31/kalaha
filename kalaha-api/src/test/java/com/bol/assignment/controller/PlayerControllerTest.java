@@ -24,14 +24,19 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import com.bol.assignment.command.PlayerCommand;
+import com.bol.assignment.converter.PlayerCommandToPlayer;
 import com.bol.assignment.domain.Player;
 import com.bol.assignment.service.PlayerService;
 
 @ExtendWith(SpringExtension.class)
 class PlayerControllerTest {
+
   private MockMvc mockMvc;
   @Mock
   private PlayerService playerService;
+  @Mock
+  private PlayerCommandToPlayer playerCommandToPlayer;
   @InjectMocks
   private PlayerController playerController;
 
@@ -42,6 +47,7 @@ class PlayerControllerTest {
 
   @Test
   void createPlayer() throws Exception {
+    when(playerCommandToPlayer.convert(any(PlayerCommand.class))).thenReturn(mockPlayer());
     when(playerService.createOrUpdatePlayer(any(Player.class))).thenReturn(mockPlayer());
     mockMvc.perform(post(PAGE_PLAYER)
         .contentType(MediaType.APPLICATION_JSON_VALUE)
@@ -60,6 +66,7 @@ class PlayerControllerTest {
   @Test
   void updatePlayer() throws Exception {
     when(playerService.getPlayerById(anyLong())).thenReturn(Optional.of(mockPlayer()));
+    when(playerCommandToPlayer.convert(any(PlayerCommand.class))).thenReturn(mockPlayer());
     when(playerService.createOrUpdatePlayer(any(Player.class))).thenReturn(mockPlayer());
     mockMvc.perform(put(PAGE_PLAYER)
         .contentType(MediaType.APPLICATION_JSON_VALUE)
