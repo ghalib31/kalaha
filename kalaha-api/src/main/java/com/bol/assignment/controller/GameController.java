@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bol.assignment.command.PlayCommand;
 import com.bol.assignment.domain.Game;
 import com.bol.assignment.domain.Player;
 import com.bol.assignment.exception.RequestException;
@@ -59,6 +60,26 @@ public class GameController {
     return ResponseEntity.badRequest().body("Expecting players or playerIds as root key");
   }
 
+  /**
+   * Get an existing game by id.
+   *
+   * @param id the id
+   * @return the game
+   */
+  @GetMapping(PAGE_ID)
+  public ResponseEntity getGame(@PathVariable final Long id) {
+    final Optional<Game> optionalGame = gameService.getGame(id);
+    if (optionalGame.isPresent()) {
+      return ResponseEntity.ok(optionalGame.get());
+    }
+    return ResponseEntity.notFound().build();
+  }
+
+  @PostMapping("/play")
+  public ResponseEntity playGame(@RequestBody final PlayCommand playCommand) throws RequestException {
+    return ResponseEntity.of(Optional.of(gameService.sow(playCommand.getGameId(), playCommand.getPlayerId(), playCommand.getStartPitIndex())));
+  }
+
   private ResponseEntity createNewGameWithNewPlayers(final JsonNode jsonNode) throws RequestException {
     final Iterator<JsonNode> iterator = jsonNode.iterator();
     final Set<Player> players = new HashSet<>();
@@ -88,18 +109,4 @@ public class GameController {
     return ResponseEntity.ok(gameService.createNewGameForExistingPlayer(playerIds));
   }
 
-  /**
-   * Get an existing game by id.
-   *
-   * @param id the id
-   * @return the game
-   */
-  @GetMapping(PAGE_ID)
-  public ResponseEntity getGame(@PathVariable final Long id) {
-    final Optional<Game> optionalGame = gameService.getGame(id);
-    if (optionalGame.isPresent()) {
-      return ResponseEntity.ok(optionalGame.get());
-    }
-    return ResponseEntity.notFound().build();
-  }
 }

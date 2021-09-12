@@ -1,6 +1,8 @@
 package com.bol.assignment.controller;
 
 import static com.bol.assignment.constant.KalahaConstants.PAGE_GAME;
+import static com.bol.assignment.constant.KalahaConstants.PAGE_PLAY;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anySet;
 import static org.mockito.Mockito.times;
@@ -103,12 +105,23 @@ class GameControllerTest {
   }
 
   @Test
-  void should_not_get_game_with_id() throws Exception {
+  void should_not_get_game_with_wrong_id() throws Exception {
     mockMvc.perform(get(PAGE_GAME + "/1"))
         .andExpect(status().isNotFound());
+  }
+
+  @Test
+  void should_play_game() throws Exception {
+    when(gameService.sow(anyLong(), anyLong(), anyInt())).thenReturn(mockGame());
+    mockMvc.perform(post(PAGE_GAME+PAGE_PLAY)
+        .contentType(MediaType.APPLICATION_JSON_VALUE)
+        .content("{\"gameId\": \"1\",\"playerId\":\"1\",\"startPitIndex\":\"1\"}"))
+        .andExpect(status().isOk());
+    verify(gameService, times(1)).sow(anyLong(), anyLong(), anyInt());
   }
 
   private Game mockGame() {
     return Game.builder().build();
   }
+
 }
