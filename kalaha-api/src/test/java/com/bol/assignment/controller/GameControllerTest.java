@@ -27,12 +27,15 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.bol.assignment.domain.Game;
 import com.bol.assignment.service.GameService;
+import com.bol.assignment.service.SowService;
 
 @ExtendWith(SpringExtension.class)
 class GameControllerTest {
 
   @Mock
   private GameService gameService;
+  @Mock
+  private SowService sowService;
   @InjectMocks
   private GameController controller;
   private MockMvc mockMvc;
@@ -112,12 +115,12 @@ class GameControllerTest {
 
   @Test
   void should_play_game() throws Exception {
-    when(gameService.sow(anyLong(), anyLong(), anyInt())).thenReturn(mockGame());
-    mockMvc.perform(post(PAGE_GAME+PAGE_PLAY)
+    when(sowService.sow(anyLong(), anyLong(), anyInt())).thenReturn(mockGame());
+    mockMvc.perform(post(PAGE_GAME + PAGE_PLAY)
         .contentType(MediaType.APPLICATION_JSON_VALUE)
         .content("{\"gameId\": \"1\",\"playerId\":\"1\",\"startPitIndex\":\"1\"}"))
         .andExpect(status().isOk());
-    verify(gameService, times(1)).sow(anyLong(), anyLong(), anyInt());
+    verify(sowService, times(1)).sow(anyLong(), anyLong(), anyInt());
   }
 
   private Game mockGame() {

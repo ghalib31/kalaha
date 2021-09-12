@@ -4,6 +4,7 @@ import static com.bol.assignment.constant.KalahaConstants.KEY_PLAYERS;
 import static com.bol.assignment.constant.KalahaConstants.KEY_PLAYER_IDS;
 import static com.bol.assignment.constant.KalahaConstants.PAGE_GAME;
 import static com.bol.assignment.constant.KalahaConstants.PAGE_ID;
+import static com.bol.assignment.constant.KalahaConstants.PAGE_PLAY;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -23,6 +24,7 @@ import com.bol.assignment.domain.Game;
 import com.bol.assignment.domain.Player;
 import com.bol.assignment.exception.RequestException;
 import com.bol.assignment.service.GameService;
+import com.bol.assignment.service.SowService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,6 +41,7 @@ import lombok.extern.slf4j.Slf4j;
 public class GameController {
 
   private final GameService gameService;
+  private final SowService sowService;
 
   /**
    * Create new game.
@@ -75,9 +78,9 @@ public class GameController {
     return ResponseEntity.notFound().build();
   }
 
-  @PostMapping("/play")
+  @PostMapping(PAGE_PLAY)
   public ResponseEntity playGame(@RequestBody final PlayCommand playCommand) throws RequestException {
-    return ResponseEntity.of(Optional.of(gameService.sow(playCommand.getGameId(), playCommand.getPlayerId(), playCommand.getStartPitIndex())));
+    return ResponseEntity.of(Optional.of(sowService.sow(playCommand.getGameId(), playCommand.getPlayerId(), playCommand.getStartPitIndex())));
   }
 
   private ResponseEntity createNewGameWithNewPlayers(final JsonNode jsonNode) throws RequestException {
