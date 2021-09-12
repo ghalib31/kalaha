@@ -78,6 +78,13 @@ public class GameController {
     return ResponseEntity.notFound().build();
   }
 
+  /**
+   * Play game.
+   *
+   * @param playCommand the play command
+   * @return the response entity
+   * @throws RequestException the request exception
+   */
   @PostMapping(PAGE_PLAY)
   public ResponseEntity playGame(@RequestBody final PlayCommand playCommand) throws RequestException {
     return ResponseEntity.of(Optional.of(sowService.sow(playCommand.getGameId(), playCommand.getPlayerId(), playCommand.getStartPitIndex())));
