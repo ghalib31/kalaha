@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Kalaha - enter players</title>
+  <th:block th:insert="common.html::headerFiles"/>
+</head>
+
+<body>
+<th:block th:insert="common.html::headers"/>
+<div class="container pt-4">
+  <h2>Please enter the players name</h2>
+
+  <div class="panel panel-default pt-4">
+
+    <form action="#" method="post" th:action="@{/game/}" th:object="${createGame}">
+
+      <div th:each="i : ${#numbers.sequence(0, 1, 1)}">
+        <div class="panel-heading pt-2">
+          <b th:text="'Player '+${i+1}"></b>
+        </div>
+        <div class="panel-body pt-2">
+          <div class="row">
+            <div class="col-md-3 form-group" th:class="${#fields.hasErrors('players[__${i}__].firstName')}
+                                ? 'col-md-3 form-group has-error' : 'col-md-3 form-group'">
+              <label>First name:</label>
+              <input class="form-control" th:errorclass="has-error" th:field="*{players[__${i}__].firstName}" type="text"/>
+              <span class="help-block" th:if="${#fields.hasErrors('players[__${i}__].firstName')}">
+                  <ul>
+                      <li class="text-danger" th:each="err : ${#fields.errors('players[__${i}__].firstName')}" th:text="${err}"/>
+                  </ul>
+              </span>
+            </div>
+            <div class="col-md-3 form-group" th:class="${#fields.hasErrors('players[__${i}__].lastName')}
+                                ? 'col-md-3 form-group has-error' : 'col-md-3 form-group'">
+              <label>Last name:</label>
+              <input class="form-control" th:errorclass="has-error" th:field="*{players[__${i}__].lastName}" type="text"/>
+              <span class="help-block" th:if="${#fields.hasErrors('players[__${i}__].lastName')}">
+                  <ul>
+                      <li class="text-danger" th:each="err : ${#fields.errors('players[__${i}__].lastName')}" th:text="${err}"/>
+                  </ul>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <p><input type="reset" value="Reset"/> <input type="submit" value="Submit"/></p>
+    </form>
+  </div>
+</div>
+</body>
+</html>

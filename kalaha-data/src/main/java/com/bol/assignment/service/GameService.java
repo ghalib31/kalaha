@@ -1,5 +1,6 @@
 package com.bol.assignment.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ public interface GameService {
    * @return the game
    * @throws RequestException the request exception
    */
-  Game createNewGame(final Set<Player> players) throws RequestException;
+  Game createNewGame(final List<Player> players) throws RequestException;
 
   /**
    * Create new game for existing player game.

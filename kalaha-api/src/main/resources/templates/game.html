@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Kalaha - play</title>
+  <th:block th:insert="common.html::headerFiles"/>
+
+  <script type="application/javascript">
+
+    $(document).ready(function () {
+      $("#message").hide();
+    });
+
+    function playGame(id) {
+      const formData = {
+        "gameId": document.getElementById('gameId').value,
+        "playerId": id.split('-')[0],
+        "startPitIndex": id.split('-')[1]
+      }
+
+      $.post({
+        url: '/game/play',
+        data: formData,
+        success: function () {
+          location.reload();
+        },
+        error: function (response) {
+          $("#message p").text(response.responseText);
+          $("#message").show();
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+<th:block th:insert="common.html::headers"/>
+
+<div class="alert alert-warning" id="message">
+  <p></p>
+</div>
+
+<div class="container pt-4">
+  <div th:unless="${game.isGameOver()}">
+    <b class="text-primary" th:text="'Player turn:  ' + ${playerInGameTurn.player.firstName}+' '+ ${playerInGameTurn.player.lastName}"></b>
+  </div>
+  <div th:if="${game.isGameOver()}">
+    <b class="text-success" th:text="'Game over and winner is:  ' + ${winner.firstName}+' '+ ${winner.lastName}"></b>
+  </div>
+  <form action="#" id="gameForm" method="post">
+    <div class="row mt-5 mb-5">
+      <div class="col text-center">
+        <b th:text="${otherPlayerInGame.player.firstName}+' '+ ${otherPlayerInGame.player.lastName}"></b>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 text-center">
+        <input class="btn btn-secondary btn-rectangle-big" th:value="${otherPlayerInGame.getHomePit()}" type="button"
+               value="0">
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-sm-2" th:each="i : ${#numbers.sequence(5, 0,-1)}">
+            <input class="btn btn-secondary btn-square-big" onclick="playGame(this.id)"
+                   th:id="${otherPlayerInGame.player.id +'-'+ otherPlayerInGame.pits[i].pitIndex}"
+                   th:value="${otherPlayerInGame.pits[i].numberOfStones}"
+                   type="button"
+                   value="1"/>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-sm-2" th:each="pit, itemStat : ${myPlayerInGame.pits}">
+            <input class="btn btn-secondary btn-square-big" onclick="playGame(this.id)" th:id="${myPlayerInGame.player.id+'-'+pit.pitIndex}"
+                   th:value="${pit.numberOfStones}"
+                   type="button"
+                   value="1"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <input class="btn btn-secondary btn-rectangle-big" th:value="${myPlayerInGame.getHomePit()}" type="button"
+               value="0">
+      </div>
+    </div>
+
+    <div class="row mt-5 mb-5">
+      <div class="col text-center">
+        <b th:text="${myPlayerInGame.player.firstName}+' '+ ${myPlayerInGame.player.lastName}"></b>
+      </div>
+    </div>
+
+    <input id="gameId" name="gameId" th:value="${game.id}" type="hidden"/>
+    <input id="playerId" name="playerId" th:value="${playerInGameTurn.player.id}" type="hidden"/>
+
+  </form>
+</div>
+
+<script crossorigin="anonymous"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

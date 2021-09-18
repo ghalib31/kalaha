@@ -2,13 +2,14 @@ package com.bol.assignment.service;
 
 import static java.util.stream.Collectors.toList;
 
+import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
 import com.bol.assignment.domain.Game;
 import com.bol.assignment.domain.Pit;
+import com.bol.assignment.domain.Player;
 import com.bol.assignment.domain.PlayerInGame;
 import com.bol.assignment.exception.RequestException;
 import com.bol.assignment.repository.GameRepository;
@@ -32,7 +33,7 @@ public class SowServiceImpl implements SowService {
     final PlayerInGame myPlayerInGame = game.getPlayerInGame().stream()
         .filter(pig -> pig.getPlayer().getId().equals(playerId))
         .collect(toList()).get(0);
-    final Set<Pit> myPits = myPlayerInGame.getPits();
+    final List<Pit> myPits = myPlayerInGame.getPits();
     final Pit startPit = myPits
         .stream().filter(pit -> pit.getPitIndex().compareTo(startPitIndex) == 0)
         .collect(toList()).get(0);
@@ -48,7 +49,7 @@ public class SowServiceImpl implements SowService {
         .filter(pig -> !pig.getPlayer().getId().equals(playerId))
         .collect(toList()).get(0);
     final Long otherPlayerId = otherPlayerInGame.getPlayer().getId();
-    final Set<Pit> otherPits = otherPlayerInGame.getPits();
+    final List<Pit> otherPits = otherPlayerInGame.getPits();
 
     int remainingStones = fillOwnPits(myPits, startPitIndex, numberOfStonesInTheChosenPit, otherPits);
     game.setPlayerTurn(otherPlayerId);
@@ -89,14 +90,17 @@ public class SowServiceImpl implements SowService {
     }
     final Long playerTurn = game.getPlayerTurn();
     if (playerTurn.compareTo(playerId) != 0) {
-      log.error("Either its not your turn or you are not in this game player {}", playerId);
-      throw new RequestException("Either its not your turn or you are not in this game player " + playerId);
+      Player player = game.getPlayerInGame().stream()
+          .filter(pig -> pig.getPlayer().getId().equals(playerTurn))
+          .collect(toList()).get(0).getPlayer();
+      log.error("Please wait for {} {} to finish their move.", player.getFirstName(), player.getLastName());
+      throw new RequestException("Please wait for " + player.getFirstName() + " " + player.getLastName() + " to finish their move.");
     }
     return game;
   }
 
-  private int fillOwnPits(final Set<Pit> myPits, final int startPitIndex,
-                          final int numberOfStonesToSow, final Set<Pit> otherPits) {
+  private int fillOwnPits(final List<Pit> myPits, final int startPitIndex,
+                          final int numberOfStonesToSow, final List<Pit> otherPits) {
     int noOfStonesToSow = numberOfStonesToSow;
     for (int i = startPitIndex + 1; i <= 6; i++) {
       final int pitIndex = i;
@@ -114,7 +118,7 @@ public class SowServiceImpl implements SowService {
     return noOfStonesToSow;
   }
 
-  private int fillOpponentPit(final Set<Pit> opponentsPits, final int numberOfStonesToSow) {
+  private int fillOpponentPit(final List<Pit> opponentsPits, final int numberOfStonesToSow) {
     int noOfStonesToSow = numberOfStonesToSow;
     for (int i = 1; i <= 6; i++) {
       if (noOfStonesToSow == 0) {
@@ -130,7 +134,7 @@ public class SowServiceImpl implements SowService {
     return noOfStonesToSow;
   }
 
-  private void captureOpponentStones(final Pit myPit, final Set<Pit> othersPits) {
+  private void captureOpponentStones(final Pit myPit, final List<Pit> othersPits) {
     //I have no stones left. If the last pit has one stone then it must have had zero before.
     if (myPit.getNumberOfStones() == 1) {
       // Check if opposite pit in opponents side has any stones.
@@ -148,7 +152,7 @@ public class SowServiceImpl implements SowService {
     }
   }
 
-  private void checkIfWeHaveAWinner(final Set<Pit> myPits, final Set<Pit> otherPits,
+  private void checkIfWeHaveAWinner(final List<Pit> myPits, final List<Pit> otherPits,
                                     final PlayerInGame myPlayerInGame, final PlayerInGame otherPlayerInGame,
                                     final Game game) {
     //Check if any side has zero stones left in all their pits

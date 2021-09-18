@@ -1,6 +1,7 @@
 package com.bol.assignment.service;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -28,7 +29,7 @@ public class GameServiceImpl implements GameService {
   private final PlayerRepository playerRepository;
 
   @Override
-  public Game createNewGame(final Set<Player> players) throws RequestException {
+  public Game createNewGame(final List<Player> players) throws RequestException {
     if (players.size() != 2) {
       throw new RequestException("Need two players for the game");
     }

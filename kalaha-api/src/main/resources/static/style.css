@@ -1,0 +1,21 @@
+/*body { background: #e6f3ff !important; }*/
+
+.btn-square-big {
+  width: 100px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: 100px !important;
+  text-align: center;
+  padding: 0px;
+  font-size: 24px;
+}
+
+.btn-rectangle-big {
+  width: 150px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: 220px !important;
+  text-align: center;
+  padding: 0px;
+  font-size: 24px;
+}

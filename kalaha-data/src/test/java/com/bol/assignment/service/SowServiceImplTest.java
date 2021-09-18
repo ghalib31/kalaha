@@ -1,13 +1,13 @@
 package com.bol.assignment.service;
 
-import static java.util.stream.Collectors.toList;
+import static com.bol.assignment.service.MockObjects.getNumberOfStonesInHomePit;
+import static com.bol.assignment.service.MockObjects.getNumberOfStonesInPit;
+import static com.bol.assignment.service.MockObjects.mockGame;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
-import java.util.HashSet;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Assertions;
@@ -18,8 +18,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.bol.assignment.domain.Game;
-import com.bol.assignment.domain.Pit;
-import com.bol.assignment.domain.Player;
 import com.bol.assignment.domain.PlayerInGame;
 import com.bol.assignment.exception.RequestException;
 import com.bol.assignment.repository.GameRepository;
@@ -90,56 +88,5 @@ class SowServiceImplTest {
     assertEquals(1L, game.getWinner());
     assertEquals(42, getNumberOfStonesInHomePit(game, 1L));
     assertEquals(30, getNumberOfStonesInHomePit(game, 2L));
-  }
-
-  private Player mockPlayer(final Long id, final String firstName, final String lastName) {
-    return Player.builder().id(id).firstName(firstName).lastName(lastName).build();
-  }
-
-  private Game mockGame() {
-    return Game.builder().id(1L)
-        .playerInGame(mockPlayerInGameSet())
-        .isGameOver(false).playerTurn(1L).build();
-  }
-
-  private Set<PlayerInGame> mockPlayerInGameSet() {
-    final Set<PlayerInGame> playerInGames = new HashSet<>();
-    PlayerInGame p1 = PlayerInGame.builder().
-        homePit(0)
-        .player(mockPlayer(1L, "John", "Doe"))
-        .build();
-    p1.setPits(mockPits(p1));
-    playerInGames.add(p1);
-    PlayerInGame p2 = PlayerInGame.builder()
-        .homePit(0)
-        .player(mockPlayer(2L, "Jane", "Doe"))
-        .build();
-    p2.setPits(mockPits(p2));
-    playerInGames.add(p2);
-    return playerInGames;
-  }
-
-  private Set<Pit> mockPits(PlayerInGame pig) {
-    Set<Pit> pitSet = new HashSet<>();
-    for (int i = 1; i <= 6; i++) {
-      pitSet.add(Pit.builder().pitIndex(i).numberOfStones(6).playerInGame(pig).build());
-    }
-    return pitSet;
-  }
-
-  private int getNumberOfStonesInPit(final Game game, final Long playerId, final int pitIndex) {
-    return game.getPlayerInGame().stream()
-        .filter(playerInGame -> playerInGame.getPlayer().getId().compareTo(playerId) == 0)
-        .collect(toList()).get(0)
-        .getPits().stream().filter(pit -> pit.getPitIndex().compareTo(pitIndex) == 0)
-        .collect(toList())
-        .get(0)
-        .getNumberOfStones();
-  }
-
-  private int getNumberOfStonesInHomePit(final Game game, final Long playerId) {
-    return game.getPlayerInGame().stream()
-        .filter(playerInGame -> playerInGame.getPlayer().getId().compareTo(playerId) == 0)
-        .collect(toList()).get(0).getHomePit();
   }
 }

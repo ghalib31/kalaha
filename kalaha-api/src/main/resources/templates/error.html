@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Error</title>
+  <th:block th:insert="common.html::headerFiles"/>
+</head>
+
+<body>
+<th:block th:insert="common.html::headers"/>
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Error page</h1>
+      <p th:text="${exception.getMessage()}"></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

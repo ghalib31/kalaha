@@ -1,7 +1,7 @@
 package com.bol.assignment.domain;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -41,7 +41,7 @@ public class PlayerInGame {
   private int homePit;
 
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "playerInGame")
-  private Set<Pit> pits;
+  private List<Pit> pits;
 
   @ManyToOne
   @JsonIgnore
@@ -56,8 +56,8 @@ public class PlayerInGame {
     if (pit != null) {
       pit.setPlayerInGame(this);
     }
-    if(pits==null){
-      pits = new HashSet<>();
+    if (pits == null) {
+      pits = new ArrayList<>();
     }
     this.pits.add(pit);
   }
