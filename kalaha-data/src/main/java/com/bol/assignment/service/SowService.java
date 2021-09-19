@@ -5,7 +5,7 @@ import com.bol.assignment.exception.RequestException;
 
 public interface SowService {
   /**
-   * Sow game.
+   * Sow the pits taking stones from starting pits.
    *
    * @param gameId        the game id
    * @param playerId      the player id

@@ -28,6 +28,11 @@ public class GameServiceImpl implements GameService {
   private final GameRepository gameRepository;
   private final PlayerRepository playerRepository;
 
+  /**
+   * Create a new game for new players
+   *
+   * @param players the players
+   */
   @Override
   public Game createNewGame(final List<Player> players) throws RequestException {
     if (players.size() != 2) {
@@ -45,6 +50,9 @@ public class GameServiceImpl implements GameService {
     return createGame(player1, player2);
   }
 
+  /**
+   * Create a new game for existing players
+   */
   @Override
   public Game createNewGameForExistingPlayer(final Set<String> playerIds) throws RequestException {
     if (playerIds.size() != 2) {
@@ -62,6 +70,16 @@ public class GameServiceImpl implements GameService {
       throw new RequestException("Player does not exists with id " + id2);
     }
     return createGame(optionalPlayer1.get(), optionalPlayer2.get());
+  }
+
+  /**
+   * Get a new game by id
+   *
+   * @param gameId the game id
+   */
+  @Override
+  public Optional<Game> getGame(final Long gameId) {
+    return gameRepository.findById(gameId);
   }
 
   private Game createGame(final Player player1, final Player player2) {
@@ -82,11 +100,6 @@ public class GameServiceImpl implements GameService {
     return gameRepository.save(game);
   }
 
-  @Override
-  public Optional<Game> getGame(final Long gameId) {
-    return gameRepository.findById(gameId);
-  }
-
   private PlayerInGame getPlayerInGame(final Player player) {
     PlayerInGame playerInGame = PlayerInGame.builder().player(player).homePit(0).build();
     for (int i = 1; i <= 6; i++) {
@@ -94,6 +107,5 @@ public class GameServiceImpl implements GameService {
     }
     return playerInGame;
   }
-
 
 }

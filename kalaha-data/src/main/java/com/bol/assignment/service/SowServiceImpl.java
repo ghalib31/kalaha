@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Implementation of Sow service.
+ * Implementation of Sow service. This class is responsible to executing the moves a user indicates.
  */
 @Service
 @Slf4j
@@ -26,6 +26,15 @@ public class SowServiceImpl implements SowService {
 
   private final GameRepository gameRepository;
 
+  /**
+   * Sow the pits taking stones from starting pits
+   *
+   * @param gameId        the game id
+   * @param playerId      the player id
+   * @param startPitIndex the start pit index
+   * @return
+   * @throws RequestException
+   */
   public Game sow(final Long gameId, final Long playerId, final int startPitIndex) throws RequestException {
     final Optional<Game> optionalGame = gameRepository.findById(gameId);
     final Game game = validateSow(optionalGame, playerId, startPitIndex);
@@ -76,6 +85,9 @@ public class SowServiceImpl implements SowService {
 
   }
 
+  /**
+   * Check if the incoming request is valid
+   */
   private Game validateSow(final Optional<Game> optionalGame, final Long playerId, final int startPitIndex) throws RequestException {
     if (!optionalGame.isPresent()) {
       throw new RequestException("There is no game with given id");
@@ -99,6 +111,9 @@ public class SowServiceImpl implements SowService {
     return game;
   }
 
+  /**
+   * This method fills pits for the player whose turn it is
+   */
   private int fillOwnPits(final List<Pit> myPits, final int startPitIndex,
                           final int numberOfStonesToSow, final List<Pit> otherPits) {
     int noOfStonesToSow = numberOfStonesToSow;
@@ -118,6 +133,9 @@ public class SowServiceImpl implements SowService {
     return noOfStonesToSow;
   }
 
+  /**
+   * This method fills pits for the player who is waiting for his turn to come
+   */
   private int fillOpponentPit(final List<Pit> opponentsPits, final int numberOfStonesToSow) {
     int noOfStonesToSow = numberOfStonesToSow;
     for (int i = 1; i <= 6; i++) {
@@ -134,6 +152,9 @@ public class SowServiceImpl implements SowService {
     return noOfStonesToSow;
   }
 
+  /**
+   * Capture stones of the opponents
+   */
   private void captureOpponentStones(final Pit myPit, final List<Pit> othersPits) {
     //I have no stones left. If the last pit has one stone then it must have had zero before.
     if (myPit.getNumberOfStones() == 1) {
@@ -152,6 +173,9 @@ public class SowServiceImpl implements SowService {
     }
   }
 
+  /**
+   * Check if there is a winner and set the results
+   */
   private void checkIfWeHaveAWinner(final List<Pit> myPits, final List<Pit> otherPits,
                                     final PlayerInGame myPlayerInGame, final PlayerInGame otherPlayerInGame,
                                     final Game game) {
