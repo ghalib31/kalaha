@@ -13,10 +13,10 @@ If you wish to use any other port, please change it in application.properties as
 <br>
 
 ## Building and running from code
-Go to the root folder of the code i.e. mohammad-ghalib-nashtar (in terminal/command prompt) and run (use mvnw.cmd for windows)
+Go to the location project-root/kalaha-api (in terminal/command prompt) and run
 ```bash
-sh ./mvnw clean install
-sh ./mvnw spring-boot:run
+mvn clean install
+mvn spring-boot:run
 ```
 
 <br>
