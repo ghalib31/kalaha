@@ -1,4 +1,5 @@
 {
+  "schedule": ["every hour"],
   "gitlabci": {
       "fileMatch": [
         "\\.yml$"
