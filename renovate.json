@@ -1,12 +1,12 @@
 {
   "gitlabci": {
       "fileMatch": [
-        "^cicd/common\\.yml$"
+        "(^|/)cicd/common\\.yml$"
       ]
     },
   "gitlabci-include": {
      "fileMatch": [
-        "^cicd/common\\.yml$"
+        "(^|/)cicd/common\\.yml$"
       ]
   }
 }
