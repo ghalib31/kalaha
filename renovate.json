@@ -3,5 +3,10 @@
       "fileMatch": [
         "\\.common\\.yml$"
       ]
-    }
+    },
+  "gitlabci-include": {
+     "fileMatch": [
+        "\\.common\\.yml$"
+      ]
+  }
 }
