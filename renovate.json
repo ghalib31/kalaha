@@ -1,12 +1,12 @@
 {
   "gitlabci": {
       "fileMatch": [
-        "\common\\.yml$"
+        "\\common\\.yml$"
       ]
     },
   "gitlabci-include": {
      "fileMatch": [
-        "\common\\.yml$"
+        "\\common\\.yml$"
       ]
   }
 }
