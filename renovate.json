@@ -1,5 +1,4 @@
 {
-  "schedule": ["after 4:40pm"],
   "gitlabci": {
       "fileMatch": [
         "\\.common\\.yml$"
