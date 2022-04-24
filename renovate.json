@@ -2,7 +2,7 @@
   "schedule": ["after 4:40pm"],
   "gitlabci": {
       "fileMatch": [
-        "(^|/)cicd/common.yml$"
+        "^cicd/common\\.yml$"
       ]
     }
 }
