@@ -2,6 +2,7 @@
   "gitlabci": {
       "fileMatch": [
         "(^|/)cicd/common.yml$"
-      ]
+      ],
+	  "pinDigests": true
     }
 }
