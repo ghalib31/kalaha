@@ -1,0 +1,7 @@
+variables:
+  JAVA_IMAGE: "azul/zulu-openjdk-debian:17"
+  JAVA_ALPINE_IMAGE: "azul/zulu-openjdk-alpine:17"
+  HELM_IMAGE: "alpine/helm:3.8.1"
+  JACOCO_IMAGE: "registry.gitlab.com/haynes/jacoco2cobertura:latest"
+  NODE_IMAGE: "node:17-alpine3.15"
+  ALPINE_IMAGE: "alpine:3.15"
