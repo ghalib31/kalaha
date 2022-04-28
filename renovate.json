@@ -1,7 +1,7 @@
 {
   "gitlabci": {
       "fileMatch": [
-        "(^|/)cicd/[^/]+\\.yml$"
+        "(^|/)cicd/common.yml$"
       ]
     }
 }
